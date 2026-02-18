@@ -57,7 +57,17 @@ class HorseRaces:
             inner keys are (str) races, inner values are (int) race times
             EXAMPLE: {'Special Week': {'Tenno Sho Fall': 16.5, 'Tenno Sho Spring': 16.3, 'Teio Sho': 17.0}}
         '''
-        pass
+        output = {}
+        for i in range(1, len(table)):
+            #print(f"{table[i]}i")
+            for j in range(1, len(table[i])):
+                #print(f"{table[i][j]}j")
+                try:
+                    output[table[i][0]][table[0][j]] = float(table[i][j])
+                except Exception:
+                    output[table[i][0]] = {}
+                    output[table[i][0]][table[0][j]] = float(table[i][j])
+        return output
 
 ###############################################################################
 ##### TASK 2
